@@ -7,8 +7,8 @@
 @section('content')
     <div class="container">
         <div class="btn-layanan">
-            <a href="#" class="btn btn-primary">
-                Tambah Layanan Baru
+            <a href="{{ route('layanan.create') }}" class="btn btn-primary">
+                Tambah Pelanggan Baru
             </a>
         </div>
     </div>
@@ -18,14 +18,42 @@
                 <thread>
                     <tr>
                         <th>#</th>
-                        <th>Id Petugas</th>
-                        <th>Nama Petugas</th>
-                        <th>Nomor Telepon</th>
-                        <th>Status</th>
+                        <th>Id Pricelist</th>
+                        <th>Nama Layanan</th>
+                        <th>Durasi</th>
+                        <th>Harga</th>
+                        <th>Deskripsi</th>
                         <th>Action</th>
                     </tr>
                 </thread>
+                <tbody>
+                    @foreach ($layanans as $layanan )
+                    <tr>
+                        <td>{{ $loop->iterasion }}</td>
+                        <td>{{ $layanan->id }}</td>
+                        <td>{{ $layanan->nama_layanan }}</td>
+                        <td>{{ $layanan->durasi }}</td>
+                        <td>{{ number_format($layanan->harga, 0, ',', '.') }}</td>
+                        <td>{{ $layanan->deskripsi }}</td>
+                        <td>
+                            <div class="action-button">
+                                <a href="{{ route('#', $pelanggan->id) }}" class="edit-button" title="edit">
+                                    Edit
+                                </a>
+                                <form action="{{ route('#', $pelanggan->id) }}" method="POST" class="delete-form">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="delete-button" title="Hapus" onclick="return confirm('Apakah Anda yakin ingin menghapus pelanggan ini?')">
+                                        Hapus
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
             </table>
         </div>
-    </div>
+    </div>    
 @endsection
+
