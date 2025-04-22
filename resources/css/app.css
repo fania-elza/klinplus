@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: "Nunito", "Segoe UI", arial, "Open Sans";
+    font-family: "Nunito", "Segoe UI", arial;
     background-color: #f4f6f9;
     color: #333;
     line-height: 1.6;
@@ -10,6 +10,10 @@ body {
 
 *, ::after, ::before {
     box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
 }
 
 /* App Container */
@@ -35,7 +39,7 @@ body {
 }
 
 .sidebar-title {
-    font-size: 1.2rem;
+    font-size: 14px;
     font-weight: bold;
     margin: 0;
     color: #333;
@@ -50,7 +54,7 @@ body {
 }
 
 .sidebar-section-title {
-    font-size: 0.75rem;
+    font-size: 10px;
     text-transform: uppercase;
     color: #666;
     margin: 15px 0 10px 0;
@@ -91,7 +95,7 @@ body {
 
 .menu-icon {
     margin-right: 10px;
-    font-size: 1.1rem;
+    font-size: 9px;
 }
 
 .sidebar-logout {
@@ -321,3 +325,4 @@ body {
 .footer-left, .footer-right {
     padding: 5px 0;
 }
+
