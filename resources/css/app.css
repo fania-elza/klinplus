@@ -59,7 +59,7 @@ body {
     color: #666;
     margin: 15px 0 10px 0;
     padding: 0 10px;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 }
 
 .sidebar-menu {
@@ -80,6 +80,7 @@ body {
     text-decoration: none;
     border-radius: 4px;
     transition: all 0.3s ease;
+    gap: 12px; /* Adjust this value to increase/decrease spacing */
 }
 
 .sidebar-menu-item a:hover {
@@ -93,9 +94,8 @@ body {
     font-weight: 500;
 }
 
-.menu-icon {
-    margin-right: 10px;
-    font-size: 9px;
+.sidebar-menu-item svg {
+    flex-shrink: 0;
 }
 
 .sidebar-logout {
@@ -177,21 +177,70 @@ body {
     border-bottom: 1px solid #f5f6f7;
 }
 
-/*Tabel Tmabah Pelanggan*/
-.btn-pelanggan, .btn-petugas, .btn-layanan {
-    margin-bottom: 10px;
+
+/*Button*/
+.btn {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 24px;
+    padding: 0.3rem 0.8rem;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
 }
 
-.btn-pelanggan a, .btn-petugas a, .btn-layanan a {
+.btn-petugas, .btn-petugas {
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+
+.btn-new {
     display: inline-block;
-    padding: 6px 15px;
+    padding: 2px 15px;
+    background-color: #6777ef;
+    color: white;
+    text-decoration: none;
+    border-radius: 22px;
+    font-weight: 500;
+    font-size: 15px;
+    box-shadow: 0 2px 6px rgba(103, 119, 239, 1);
+    transition: all 0.3s ease;
+    text-align: center;
+    font-family: "Inherit";
+    line-height: 24px;
+    letter-spacing: 0.5px;
+}
+
+.btn-new:hover {
+    background-color: #525fbf;
+    border-color: #525fbf;
+    color: white;
+}
+
+.btn-pelanggan a, .btn-petugas a {
+    display: inline-block;
+    padding: 6px 10px;
     background-color: #6777ef;
     color: white;
     text-decoration: none;
     border-radius: 20px;
     font-weight: bold;
     font-size: 12px;
-    box-shadow: 0 2px 3px rgba(0.2, 0.2, 0, 0.2); /* Shadow dasar */
+    box-shadow: 0 2px 6px rgba(103, 119, 239, 1); /* Shadow dasar */
     transition: all 0.3s ease; /* Animasi transisi */
     text-align: center;
     font-family: "Segoe UI";
@@ -227,6 +276,21 @@ body {
     font-weight: bold;
 }
 
+.btn-add {
+    background-color: #6777ef;
+    border-color: #6777ef;
+    color: white;
+    padding: 6px 8px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(103, 119, 239, 1); /* Shadow dasar */
+}
+
+.btn-add:hover {
+    background-color: #525fbf;
+    border-color: #525fbf;
+    color: white;
+}
+
 /* Table Styles */
 .table-wrapper, .container-table {
     overflow-x: auto;
@@ -258,37 +322,50 @@ body {
     gap: 12px;
 }
 
-.edit-button,
-.delete-button {
-    display: inline-flex;
-    align-items: center;
-    padding: 4px 8px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 13px;
-    transition: all 0.2s;
-}
-
 .edit-button {
-    color: #3490dc;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #f9ad4a;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(249, 173, 74, 1); /* Shadow dasar */
+    transition: all 0.3s ease; /* Animasi transisi */
+    text-align: center;
+    font-family: Inherit;
+    letter-spacing: 0.5px;
+
 }
 
 .edit-button:hover {
-    color: #1c6cb3;
-    text-decoration: underline;
+    background-color: #e3a656;
+    border-color: #e3a656;
+    color: white;
 }
 
 .delete-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #e3342f;
-    padding: 0;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #F5393C;
+    text-decoration: none;
+    color: white;
+    border-radius: 4px;
+    border-color: #F5393C;
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(249, 136, 138, 1); /* Shadow dasar */
+    transition: all 0.3s ease; /* Animasi transisi */
+    text-align: center;
+    font-family: Inherit;
+    letter-spacing: 0.5px;
 }
 
 .delete-button:hover {
-    color: #cc1f1a;
-    text-decoration: underline;
+    color: white;
+    border-color: #c42e30;
+    background-color: #c42e30;
 }
 
 .action-buttons .icon {
@@ -297,11 +374,18 @@ body {
 }
 
 .btn-back {
-    background-color: #cdd3d8;
+    background-color: #bbc2c7;
+    border-color: #bbc2c7;
+    padding: 6px 8px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(201, 206, 210, 1); /* Shadow dasar */
+    color: white;
 }
 
 .btn-back:hover {
-    background-color:#d7dce0;
+    background-color:#c9ced2;
+    color: white;
+    border-color: #c9ced2;
 }
 
 /* Empty State */
