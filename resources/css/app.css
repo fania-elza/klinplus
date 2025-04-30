@@ -73,6 +73,7 @@ body {
 }
 
 .sidebar-menu-item a {
+    font-size: 13px;
     display: flex;
     align-items: center;
     padding: 10px 15px;
@@ -99,6 +100,7 @@ body {
 }
 
 .sidebar-logout {
+    font-size: 14px;
     margin-top: 30px;
     padding: 0 15px;
 }
@@ -137,7 +139,7 @@ body {
     background-color: #6777ef;
     color: white;
     padding: 15px 30px;
-    display: flex;
+    display: flex;  
     justify-content: flex-end;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -177,6 +179,50 @@ body {
     border-bottom: 1px solid #f5f6f7;
 }
 
+.badge {
+    padding: 5px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 20px;
+}
+
+.bg-success {
+    background-color: #28a745!important;
+}
+
+.bg-warning {
+    background-color: #ffc107!important;
+}
+
+.text-dark {
+    color: #212529!important;
+}
+
+.card .form-control {
+    border-color: 1px solid #f4f6f9;
+    background-color: white;
+    width: 100%;
+    max-width: 100%;
+}
+
+.card-body {
+    background-color: white;
+    margin-top: 1px;
+}
+
+.card-footer {
+    background-color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+}
+
 
 /*Button*/
 .btn {
@@ -203,7 +249,7 @@ body {
     border-radius: .25rem;
 }
 
-.btn-petugas, .btn-petugas {
+.btn-petugas, .btn-petugas, .btn-pelanggan {
     margin-bottom: 10px;
     border-radius: 20px;
 }
@@ -250,6 +296,21 @@ body {
     background-color: #0056b3;
 }
 
+.btn-save {
+    background-color: #20c997;
+    border-color: #20c997;
+    padding: 6px 8px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(77, 212, 172, 1); /* Shadow dasar */
+    color: white;
+}
+
+.btn-save:hover {
+    background-color: #1aa179;
+    border-color: #1aa179;
+    color: white;
+}
+
 /* Add Button */
 .add-button-container {
     margin-bottom: 16px;
@@ -291,30 +352,211 @@ body {
     color: white;
 }
 
-/* Table Styles */
+/* Table Styles - Optimized */
 .table-wrapper, .container-table {
     overflow-x: auto;
     padding-top: 10px;
+    width: 100%;
+    background-color: white;
 }
 
-.customer-table, .staf-table {
+.customer-table, .staf-table, .pricelist-table, .order-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 14px;
-    border: #f5f6f7;
+    border: 1px solid #f5f6f7;
+    table-layout: fixed;
+    background-color: white;
 }
 
 .customer-table th,
-.customer-table td, .staf-table th, .staf-table td {
+.customer-table td, 
+.staf-table th, 
+.staf-table td, .pricelist-table th, .pricelist-table td, .order-table th, .order-table td {
     padding: 12px 16px;
     text-align: left;
-    border: 1px solid #f6f7f8;
+    border: 1px solid #eaeaea;
+    word-wrap: break-word;
+    vertical-align: top; /* Untuk konten multi-baris */
 }
 
-.customer-table th, .staf-table th {
+.customer-table th, .staf-table th, .pricelist-table th, .order-table th{
     font-weight: 600;
     color: #4a5568;
+    font-size: 13px;
 }
+
+/* Pricelist-table Lebar kolom yang dioptimalkan */
+.pricelist-table th:nth-child(1), 
+.pricelist-table td:nth-child(1) {
+    width: 3%; /* Nomor */
+}
+
+.pricelist-table th:nth-child(2), 
+.pricelist-table td:nth-child(2) {
+    width: 6%; /* Id Layanan*/
+}
+
+.pricelist-table th:nth-child(3), 
+.pricelist-table td:nth-child(3) {
+    width: 15%; /* Layanan */
+}
+
+.pricelist-table th:nth-child(4), 
+.pricelist-table td:nth-child(4) {
+    width: 7%; /* Durasi */
+}
+
+.pricelist-table th:nth-child(5), 
+.pricelist-table td:nth-child(5) {
+    width: 6%; /* Harga */
+}
+
+.pricelist-table th:nth-child(6), 
+.pricelist-table td:nth-child(6) {
+    width: 20%;
+    word-break: break-word;
+    overflow-wrap: break-word; /* tambahan support browser */
+    white-space: normal; /* Deskripsi lebih lebar */
+}
+
+.pricelist-table th:nth-child(7), 
+.pricelist-table td:nth-child(7) {
+    width: 10%; /* Action */
+}
+
+/* Staf-table Lebar kolom yang dioptimalkan */
+.staf-table th:nth-child(1), 
+.staf-table td:nth-child(1) {
+    width: 3%; /* Nomor */
+}
+
+.staf-table th:nth-child(2), 
+.staf-table td:nth-child(2) {
+    width: 5%; /* Status Petugas */
+}
+
+.staf-table th:nth-child(3), 
+.staf-table td:nth-child(3) {
+    width: 8%; /* Id Petugas */
+}
+
+.staf-table th:nth-child(4), 
+.staf-table td:nth-child(4) {
+    width: 10%; /* Nama Petugas */
+}
+
+.staf-table th:nth-child(5), 
+.staf-table td:nth-child(5) {
+    width: 10%; /* Nomor Telepon */
+}
+
+.staf-table th:nth-child(6), 
+.staf-table td:nth-child(6) {
+    width: 10%; /* Action */
+}
+
+/* Customer-table Lebar kolom yang dioptimalkan */
+.customer-table th:nth-child(1), 
+.customer-table td:nth-child(1) {
+    width: 3%; /* Nomor */
+}
+
+.customer-table th:nth-child(2), 
+.customer-table td:nth-child(2) {
+    width: 10%; /* Id Pelanggan*/
+}
+
+.customer-table th:nth-child(3), 
+.customer-table td:nth-child(3) {
+    width: 16%; /* Nama Pelanggan */
+}
+
+.customer-table th:nth-child(4), 
+.customer-table td:nth-child(4) {
+    width: 12%; /* Nomor Telepon */
+}
+
+.customer-table th:nth-child(5), 
+.customer-table td:nth-child(5) {
+    width: 18%; /* Email */
+}
+
+.customer-table th:nth-child(6), /* Alamat */
+.customer-table td:nth-child(6) {
+    width: 20%; /* Deskripsi lebih lebar */
+    min-width: 200px; /* Lebar minimum */ 
+}
+
+.customer-table th:nth-child(7), 
+.customer-table td:nth-child(7) {
+    width: 14%; /* Action */
+}
+
+/* Order-table Lebar kolom yang dioptimalkan */
+.order-table th:nth-child(1), 
+.order-table td:nth-child(1) {
+    width: 3%; /* Nomor */
+}
+
+.order-table th:nth-child(2), 
+.order-table td:nth-child(2) {
+    width: 10%; /* Id Pelanggan*/
+}
+
+.order-table th:nth-child(3), 
+.order-table td:nth-child(3) {
+    width: 16%; /* Nama Pelanggan */
+}
+
+.order-table th:nth-child(4), 
+.order-table td:nth-child(4) {
+    width: 12%; /* Nomor Telepon */
+}
+
+.order-table th:nth-child(5), 
+.order-table td:nth-child(5) {
+    width: 18%; /* Email */
+}
+
+.order-table th:nth-child(6), /* Alamat */
+.order-table td:nth-child(6) {
+    width: 20%; /* Deskripsi lebih lebar */
+    min-width: 200px; /* Lebar minimum */ 
+}
+
+.order-table th:nth-child(7), 
+.order-table td:nth-child(7) {
+    width: 14%; /* Action */
+}
+
+.order-table th:nth-child(8), 
+.order-table td:nth-child(8) {
+    width: 14%; /* Action */
+}
+
+.order-table th:nth-child(9), 
+.order-table td:nth-child(9) {
+    width: 14%; /* Action */
+}
+
+/* Select Kota */
+.select2-container--default .select2-selection--single {
+    height: 38px;
+    border: 1px solid #ced4da;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 36px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 36px;
+}
+
+.form-control:focus, .select2-container--default .select2-selection--single:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
 
 /* Action Buttons */
 .action-buttons {
@@ -331,18 +573,20 @@ body {
     border-radius: 4px;
     font-weight: 500;
     font-size: 14px;
-    box-shadow: 0 2px 4px rgba(249, 173, 74, 1); /* Shadow dasar */
-    transition: all 0.3s ease; /* Animasi transisi */
+    box-shadow: 0 2px 4px rgba(249, 173, 74, 1);
+    transition: all 0.3s ease;
     text-align: center;
-    font-family: Inherit;
+    font-family: inherit;
     letter-spacing: 0.5px;
-
+    border: none;
+    cursor: pointer;
 }
 
 .edit-button:hover {
     background-color: #e3a656;
-    border-color: #e3a656;
     color: white;
+    box-shadow: 0 2px 8px rgba(249, 173, 74, 0.7);
+    border-color: #e3a656;
 }
 
 .delete-button {
@@ -380,6 +624,7 @@ body {
     border-radius: 6px;
     box-shadow: 0 2px 6px rgba(201, 206, 210, 1); /* Shadow dasar */
     color: white;
+    text-decoration: none;
 }
 
 .btn-back:hover {
@@ -409,4 +654,5 @@ body {
 .footer-left, .footer-right {
     padding: 5px 0;
 }
+
 
